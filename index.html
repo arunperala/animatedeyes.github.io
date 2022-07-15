@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="mouseG.css">
+    <title>MosueG</title>
+</head>
+<body>
+
+    <div class="eyes">
+        <div class="eye">
+            <div class="ball"></div>
+        </div>
+
+        <div class="eye">
+            <div class="ball"></div>
+            </div>
+    </div>
+
+    <script>
+        var balls = document.getElementsByClassName("ball");
+        document.onmousemove = function(){
+            var x = event.clientX * 100 / window.innerWidth + "%";
+            var y = event.clientY * 100 / window.innerHeight + "%";
+              //event.clientX => get the horizontal cordinate of the onmouse  
+                //event.clientY => get the vertical cordinate of the onmouse  
+                //windows.innerWidth => get the browser width
+                //windows.innerHeight => get the browser heigth
+
+            for(var i=0; i<2 ;i++){
+                balls[i].style.left = x;
+                balls[i].style.top = y;
+                balls[i].transform = "translate(-"+x+",-"+y+")";      
+                
+                            }
+        }
+    </script>
+</body>
+</html>
